@@ -5,8 +5,6 @@ let score=20;
 let highscore=0;
 const new_game_score=20;
 
-document.querySelector('.number').textContent=number;
-
 //event handler when check button is pressed
 document.querySelector('.check').addEventListener('click',function(){
     const guess_value=Number(document.querySelector('.guess').value);
@@ -31,7 +29,7 @@ document.querySelector('.check').addEventListener('click',function(){
     
 
     else if(guess_value!==number){
-        if(score>=1){
+        if(score>1){
             document.querySelector('.guessing').textContent=guess_value>number?'Number is too high':'Number is too low';
             score--;
             document.querySelector('.score').textContent=score;
@@ -50,9 +48,7 @@ document.querySelector('.again').addEventListener('click',function(){
     document.querySelector('.score').textContent=20;
     document.querySelector('body').style.backgroundColor='rgb(23, 23, 87)';
     document.querySelector('.number').style.width='25rem'; 
-    document.querySelector('.high-score').textContent=highscore;
-//      document.querySelector('.number').textContent=`?`;
-    document.querySelector('.number').textContent=number;    
+    document.querySelector('.number').textContent=`?`;   
     document.querySelector('.guessing').textContent=`Start your guessing...`;
     document.querySelector('.score').textContent=score;
     document.querySelector('.guess').value='';
